@@ -10,6 +10,7 @@ export const getUserInfo = async ()=>{
 
     const response = await fetch(`${process.env.REACT_APP_HOST}/600/users/${cbid}`,requestOptions);
     if(!response.ok){
+        // eslint-disable-next-line
         throw {message:response.statusText,status:response.status}
     }
 
@@ -42,6 +43,7 @@ export const createUserOrder = async (cartproducts,total,user)=>{
        const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`,requestOptions);
 
        if(!response.ok){
+        // eslint-disable-next-line
         throw {message:response.statusText,status:response.status}
     }
 
@@ -61,6 +63,7 @@ export const getOrderInfo = async ()=>{
   const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders?userOrderDetail.userid=${cbid}`,requestOptions);
 
   if(!response.ok){
+    // eslint-disable-next-line
     throw {message:response.statusText,status:response.status}
 }
 

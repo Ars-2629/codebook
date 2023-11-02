@@ -5,16 +5,15 @@ import { logout,getUserInfo } from "../../services";
 export const DropdownLoggedIn = ({setLog}) => {
     const navigate = useNavigate();
     const [user,setUser] = useState([]);
-    // const user = JSON.parse(sessionStorage.getItem('cbemail'));
     useEffect(()=>{
         const fetchUserData = async ()=>{
         const data = await getUserInfo();
         data.email ? setUser(data) : handleLogOut();
-        // setUser(data)
 
         }
         fetchUserData();
-    },[])
+    // eslint-disable-next-line
+    },[]) 
 
     const handleLogOut = ()=>{
         logout();

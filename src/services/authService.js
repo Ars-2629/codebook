@@ -7,7 +7,8 @@ export const register = async (authDetails)=>{
     
       const response = await fetch(`${process.env.REACT_APP_HOST}/600/users`,requestOptions);
       if(!response.ok){
-        throw {message:response.statusText,status:response.status}
+        // eslint-disable-next-line
+        throw {message:response.statusText,status:response.status} 
       }
     const data = await response.json();
   
@@ -24,7 +25,8 @@ export const login = async (authDetails)=>{
     
       const response = await fetch(`${process.env.REACT_APP_HOST}/login`,requestOption);
       if(!response.ok){
-        throw {message:response.statusText,status:response.status}
+        // eslint-disable-next-line
+        throw {message:response.statusText,status:response.status} 
       }
       const data = await response.json();
     
